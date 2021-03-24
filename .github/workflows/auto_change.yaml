@@ -1,31 +1,31 @@
-# name: scheduled_auto_change
+name: scheduled_auto_change
 
-# on:
-#   schedule:
-#     - cron: * 11 * * *
+on:
+  schedule:
+    - cron: 0 */11 * * *
 
-# jobs:
-#   create_pr:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: checkout develop branch
-#       uses: actions/checkout@v1
-#       with:
-#         ref: develop
-#     - name: install hub
-#       uses: geertvdc/setup-hub@v1.0.0
-#     - name: create PR
-#       env:
-#         GITHUB_USER: ${{ secrets.GITHUB_USER }}
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       run: |
-#         hub pull-request -b master -m "[Scheduled]develop to master"
-#     - uses: 8398a7/action-slack@v2
-#       with:
-#         status: ${{ job.status }}
-#         only_mention_fail: 'here'
-#         author_name: Scheduled PR action
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-#       if: always()
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout develop branch
+      uses: actions/checkout@v1
+      with:
+        ref: develop
+    - name: install hub
+      uses: geertvdc/setup-hub@v1.0.0
+    - name: create PR
+      env:
+        GITHUB_USER: ${{ secrets.GITHUB_USER }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        hub pull-request -b master -m "[Scheduled]develop to master"
+    - uses: 8398a7/action-slack@v2
+      with:
+        status: ${{ job.status }}
+        only_mention_fail: 'here'
+        author_name: Scheduled PR action
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: always()
