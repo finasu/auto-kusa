@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Add text to auto_change.md
+      - name: Add text to auto_change.txt
         run: |
           git config --global user.name "yokonoji"
           git config --global user.email "yokonoji.work@gmail.com"
-          echo ¥n`date` >> auto_change/auto_change.md
+          echo ¥n`date` >> auto_change/auto_change.txt
           git add .
-          git commit -m "Update auto_change.md"
+          git commit -m "Update auto_change.txt"
           git push
