@@ -19,7 +19,7 @@ jobs:
         run: |
           git config --global user.name "yokonoji"
           git config --global user.email "yokonoji.work@gmail.com"
-          echo ¥n`date` >> auto_change/auto_change.txt
+          echo `date` >> auto_change/auto_change.txt
           git add .
           git commit -m "Update auto_change.txt"
           git push
