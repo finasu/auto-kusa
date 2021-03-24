@@ -17,6 +17,9 @@ jobs:
         uses: actions/checkout@master
       - name: Add text to auto_change.md
         run: |
+          git config --global user.name "yokonoji"
+          git config --global user.email "yokonoji.work@gmail.com"
+          ./do-something.sh
           echo echo 111 >> auto_change/auto_change.md
           git add .
           git commit -m "Update auto_change.md"
