@@ -1,12 +1,12 @@
 name: scheduled_auto_change
 
-# on:
-#   schedule:
-#     - cron: 0 */22 * * *
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: 0 */22 * * *
+# on:
+#   push:
+#     branches:
+#       - master
 
 jobs:
   build:
