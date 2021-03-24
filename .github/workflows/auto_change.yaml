@@ -1,5 +1,4 @@
 name: scheduled_auto_change
-
 # on:
 #   schedule:
 #     - cron: 0 */22 * * *
