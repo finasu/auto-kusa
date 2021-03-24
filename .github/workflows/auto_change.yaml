@@ -15,12 +15,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - run: |
-        echo echo 111 >> auto_change/auto_change.md
-
-      
-      # - name: add
-      #   uses: echo 111 >> auto_change/auto_change.md
-      #   # with:
-      #   #   name: get auto_change.md
-      #   #   path: auto_change/auto_change.md
+      - name: Add text to auto_change.md
+        run: |
+          echo echo 111 >> auto_change/auto_change.md
