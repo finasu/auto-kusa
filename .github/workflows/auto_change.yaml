@@ -19,7 +19,7 @@ jobs:
         run: |
           git config --global user.name "yokonoji"
           git config --global user.email "yokonoji.work@gmail.com"
-          echo %date% %time% >> auto_change/auto_change.md
+          echo hoge`date`
           git add .
           git commit -m "Update auto_change.md"
           git push
