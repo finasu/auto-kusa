@@ -1,4 +1,4 @@
-# auto_change.md
+# auto_kusa.txt
 このファイルの末尾にGitHub Actionsにて自動で改行の追加・削除を行う。
 
 Wed Mar 24 13:03:48 UTC 2021
